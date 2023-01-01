@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{%block editor%}
+
+{% include 'header.html' with show=show id=id %}
+
+<div class="editor">
+    <textarea class="editing {{ textarea }}" spellcheck="false" oninput="update(this.value); sync_scroll(this);"
+        onscroll="sync_scroll(this);" onkeydown="check_tab(this, event);">{{code}}</textarea>
+
+    <pre class="line-numbers highlighting" aria-hidden="true">
+        <code class="plaintext" id="highlighting-content"></code>
+    </pre>
+</div>
+
+<script>
+    let id = "{{ id }}"
+    let language = "{{ language }}"
+</script>
+
+{% endblock %}

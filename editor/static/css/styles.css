@@ -1,0 +1,282 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #161812;
+}
+
+input,
+select,
+button {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+textarea {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+select:disabled {
+    cursor: not-allowed;
+}
+
+hr {
+    height: 1px;
+    background-color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Utility classes */
+.container {
+    width: 100%;
+    max-width: 972px;
+    padding-inline: 1rem;
+    margin-inline: auto;
+}
+
+.hide_textarea {
+    z-index: -100 !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 1rem;
+}
+
+.btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Share prompt */
+.share_prompt {
+    z-index: 10000;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: #eee;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 1000px;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 3rem;
+    gap: 1rem;
+}
+
+.share_prompt span {
+    font-size: 1.5rem;
+}
+
+.share_prompt input,
+.wrapper div {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.wrapper div {
+    text-align: center;
+}
+
+.share_prompt i {
+    position: absolute;
+    font-size: 1.2rem;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+/* Regular Styles */
+
+.notification_icon {
+    background-color: white;
+    border-radius: 50%;
+    height: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.notifications i {
+    font-size: 1.5rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-block: 0.5rem;
+}
+
+.buttons > div {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.enter_code {
+    display: flex;
+    gap: 10px;
+}
+
+.notifications {
+    position: relative;
+}
+
+.notifications::before {
+    content: var(--notifications);
+    position: absolute;
+    background-color: red;
+    color: white;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 100%;
+    font-size: 0.9rem;
+    left: 100%;
+    bottom: calc(100% - 10px);
+}
+
+.notification_container {
+    width: 300px;
+    max-height: 300px;
+    background-color: #fff;
+    position: absolute;
+    right: -10px;
+    top: calc(100% + 10px);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+
+/* Notifications scrollbar */
+.notification_container::-webkit-scrollbar {
+    border-radius: 8px;
+    width: 10px;
+}
+
+.notification_container::-webkit-scrollbar-track {
+    margin-block: 0.5rem;
+}
+
+.notification_container::-webkit-scrollbar-thumb {
+    border: 3px solid #f0f0f0;
+    background-color: #858585;
+    border-radius: 10px;
+}
+
+.notification_container::-webkit-scrollbar:hover {
+    background-color: #f0f0f0;
+}
+
+.notification_container > div {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.notification_container > div:hover {
+    background-color: #ddd;
+}
+
+.notification_container span {
+    display: inline-block;
+}
+
+/* Editor */
+
+.editor {
+    background-color: #272822;
+    color: white;
+    height: var(--heigth);
+    position: relative;
+    overflow-x: scroll;
+}
+
+.editor pre {
+    padding: 10px;
+}
+
+.editing,
+.code-toolbar {
+    padding: 10px;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+
+.editor,
+.editor * {
+    /* Also add text styles to highlighting tokens */
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+    tab-size: 4;
+}
+
+.editing,
+.highlighting {
+    overflow: scroll;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Move the textarea in front of the result */
+.editing {
+    z-index: 1;
+}
+
+.highlighting {
+    z-index: 0;
+}
+
+/* Make textarea almost completely transparent */
+.editing {
+    color: transparent;
+    background: transparent;
+    caret-color: white; /* Or choose your favorite color */
+    /* resize: none; */
+    padding-left: 4.8rem;
+    padding-top: 1em;
+}
+
+.highlighting {
+    white-space: pre-wrap;
+}

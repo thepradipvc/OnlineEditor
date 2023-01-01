@@ -1,0 +1,52 @@
+<header>
+    <div class="main container">
+        <div class="get_code">
+            <div class="btn generate_code">Generate Code</div>
+        </div>
+        {% if "share" in show %}
+        <div class="enter_code">
+            <input class="share_code" type="text">
+            <div class="btn share">Share</div>
+            <div class="share_prompt hidden">
+                <div class="wrapper">
+                    <i class="fa-sharp fa-solid fa-circle-xmark"></i>
+                    <span class="title">Want your friend to know your name?</span>
+                    <input type="text" placeholder="Enter your name">
+                    <div class="btn generate_code">Send</div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="notifications">
+            <div class="notification_icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+            <div class="hidden notification_container"></div>
+        </div>
+    </div>
+    <hr class="container">
+    <div class="buttons container">
+        <div class="language_btn">
+            <select name="language">
+                <option value="palintext" default>Plain-text</option>
+            </select>
+        </div>
+        <div class="action_buttons">
+            {% if "new" in show %}
+            <div class="new">
+                <a href="/new"><i class="fa-solid fa-file-circle-plus"></i> New</a>
+            </div>
+            {% endif %}
+            {% if "save" in show %}
+            <div class="save">
+                <i class="fa-solid fa-floppy-disk"></i> Save
+            </div>
+            {% endif %}
+            {% if "duplicate" in show %}
+            <div class="duplicate">
+                <a href="{{id}}/duplicate"><i class="fa-solid fa-copy"></i> Duplicate</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</header>

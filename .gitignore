@@ -1,0 +1,10 @@
+customs
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+getting-started/*
+docker-compose.yml
+Dockerfile
+entrypoint.sh

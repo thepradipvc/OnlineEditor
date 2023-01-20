@@ -6,7 +6,7 @@ import json
 # Create your views here.
 
 def index(req):
-    msg = '''Hello friends, You can you this platform to share your code with your friends.'''
+    msg = '''Hello friends, You can use this platform to share your code with your friends.\nYou do not need to login to share the code with your friend.\nHow to share code easily?\n1. Write code by selecting a language.\n2. Save the code.\n3. After saving the code enter the 6 digit number of your friend in the box at the top.\n5. Click on share button and enter your name if you want to show your name to your friend.\nCongrats! You have successfully sent the code to your friend.\nNow he/she will recieve a notification and she can open your code by clicking on it.'''
     return render(req, "index.html", {"code" : msg, "textarea": "hide_textarea", 'show': ['new'], "language": "plaintext"})
 
 def new(req):

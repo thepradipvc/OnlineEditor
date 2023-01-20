@@ -23,9 +23,15 @@ def save(req):
     return redirect('code_display', code.id)
 
 def code_display(req, id):
-    code = codeSchema.objects.get(pk=id)
-    return render(req, "index.html", {"code": code.code, "textarea": "hide_textarea", "language": code.language, "id": code.id, 'show': ['new', 'duplicate', 'share']})
+    try:
+        code = codeSchema.objects.get(pk=id)
+        return render(req, "index.html", {"code": code.code, "textarea": "hide_textarea", "language": code.language, "id": code.id, 'show': ['new', 'duplicate', 'share']})
+    except:
+        return render("404.html", status=404)
 
 def duplicate(req, id):
-    code = codeSchema.objects.get(pk=id)
-    return render(req, "index.html", {"code": code.code, "language": code.language, 'show': ['new', 'save']})
+    try:
+        code = codeSchema.objects.get(pk=id)
+        return render(req, "index.html", {"code": code.code, "language": code.language, 'show': ['new', 'save']})
+    except:
+        return render("404.html", status=404)

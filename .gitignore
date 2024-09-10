@@ -8,3 +8,4 @@ getting-started/*
 docker-compose.yml
 Dockerfile
 entrypoint.sh
+db

@@ -1,6 +1,8 @@
 ## Online Editor
-**Installation Guide**
+It is an online code editor with syntax highlighting and WebSockets to quickly share code with someone else online.
 
+**Installation Guide**
+---
 Open the terminal to the directory where you want to setup the project.
 Run the following commands.
  1. `git clone https://github.com/ChaudharyPradip/OnlineEditor.git`
